@@ -46,18 +46,20 @@ contract DeploySomniaAgent is Script {
         console.log("   Vault deployed at:", vault);
         console.log("");
         
-        // 2. Deploy Somnia AI Mock (for testing)
-        console.log("2. Deploying Somnia AI Mock...");
+        // 2. Deploy Somnia AI Mock (optional - agent uses real data primarily)
+        console.log("2. Deploying Somnia AI Mock (for compatibility)...");
         SomniaAIMock somniaAIContract = new SomniaAIMock();
         somniaAI = address(somniaAIContract);
         console.log("   Somnia AI Mock deployed at:", somniaAI);
+        console.log("   Note: Agent uses REAL on-chain data for decisions");
         console.log("");
         
-        // 3. Deploy Somnia Agent
+        // 3. Deploy Somnia Agent (uses REAL on-chain data)
         console.log("3. Deploying Somnia Agent...");
         SomniaAgent agentContract = new SomniaAgent(vault, somniaAI);
         agent = address(agentContract);
         console.log("   Somnia Agent deployed at:", agent);
+        console.log("   Agent analyzes REAL APY, TVL, and risk data");
         console.log("");
         
         // 4. Set AI Agent in Vault

@@ -155,8 +155,9 @@ contract SomniaAgent is Ownable, ReentrancyGuard {
     }
     
     /**
-     * @notice Get AI recommendation for yield optimization
+     * @notice Get AI recommendation for yield optimization using REAL on-chain data
      * @return recommendation Full AI recommendation with confidence score
+     * @dev Analyzes real strategy data: APY, TVL, risk, and historical performance
      */
     function getAIRecommendation()
         public
@@ -165,32 +166,103 @@ contract SomniaAgent is Ownable, ReentrancyGuard {
     {
         require(registeredStrategies.length > 0, "No strategies registered");
         
-        // Prepare strategy analysis requests
-        ISomniaAI.StrategyAnalysisRequest[]
-            memory requests = new ISomniaAI.StrategyAnalysisRequest[](
-                registeredStrategies.length
-            );
+        // Analyze REAL data from all registered strategies
+        uint256 bestScore = 0;
+        address bestStrategy = address(0);
+        uint256 bestAPY = 0;
+        uint256 bestConfidence = 0;
         
         for (uint256 i = 0; i < registeredStrategies.length; i++) {
             address strategyAddr = registeredStrategies[i];
             IStrategyAdapter adapter = IStrategyAdapter(strategyAddr);
             
-            // Gather strategy data
-            requests[i] = ISomniaAI.StrategyAnalysisRequest({
-                strategyAddress: strategyAddr,
-                currentAPY: adapter.estimatedAPY(),
-                riskScore: adapter.riskLevel() * 10, // Convert to 0-100 scale
-                tvl: adapter.totalAssets(),
-                historicalPerformance: abi.encode(
-                    strategyPerformance[strategyAddr]
-                )
-            });
+            // Get REAL on-chain data
+            uint256 apy = adapter.estimatedAPY(); // Real APY from protocol
+            uint256 tvl = adapter.totalAssets(); // Real TVL
+            uint256 riskLevel = adapter.riskLevel(); // Real risk assessment
+            bool isHealthy = adapter.isHealthy(); // Real health status
+            
+            // Skip unhealthy strategies
+            if (!isHealthy) continue;
+            
+            // Calculate risk-adjusted score using REAL data
+            // Formula: score = APY * (10 - riskLevel) * TVL_factor / 100
+            uint256 riskFactor = riskLevel <= 10 ? 10 - riskLevel : 1;
+            uint256 tvlFactor = tvl > 1 ether ? 110 : (tvl > 0.1 ether ? 105 : 100);
+            
+            uint256 score = (apy * riskFactor * tvlFactor) / 100;
+            
+            // Calculate confidence based on real data quality
+            uint256 confidence = _calculateRealConfidence(
+                apy,
+                tvl,
+                riskLevel,
+                strategyPerformance[strategyAddr].successfulRebalances
+            );
+            
+            // Update best if this strategy is better
+            if (score > bestScore) {
+                bestScore = score;
+                bestStrategy = strategyAddr;
+                bestAPY = apy;
+                bestConfidence = confidence;
+            }
         }
         
-        // Get AI recommendation
-        (, recommendation) = somniaAI.analyzeBestStrategy(requests);
+        require(bestStrategy != address(0), "No suitable strategy found");
+        
+        // Return recommendation based on REAL analysis
+        recommendation = ISomniaAI.StrategyRecommendation({
+            recommendedStrategy: bestStrategy,
+            confidence: bestConfidence,
+            expectedAPY: bestAPY,
+            riskAdjustedScore: bestScore,
+            reasoning: abi.encode(
+                "Real-time analysis of on-chain APY, TVL, risk, and historical performance"
+            )
+        });
         
         return recommendation;
+    }
+    
+    /**
+     * @notice Calculate confidence score based on REAL data quality
+     * @param apy Real APY from protocol
+     * @param tvl Real total value locked
+     * @param riskLevel Real risk assessment
+     * @param successfulRebalances Historical success count
+     * @return confidence Confidence score (0-100)
+     */
+    function _calculateRealConfidence(
+        uint256 apy,
+        uint256 tvl,
+        uint256 riskLevel,
+        uint256 successfulRebalances
+    ) internal pure returns (uint256 confidence) {
+        // Start with base confidence
+        confidence = 60;
+        
+        // Higher APY = higher confidence (up to +15)
+        if (apy >= 1000) confidence += 15; // 10%+ APY
+        else if (apy >= 500) confidence += 10; // 5%+ APY
+        else if (apy >= 200) confidence += 5; // 2%+ APY
+        
+        // Higher TVL = more data = higher confidence (up to +10)
+        if (tvl >= 10 ether) confidence += 10;
+        else if (tvl >= 1 ether) confidence += 5;
+        
+        // Lower risk = higher confidence (up to +10)
+        if (riskLevel <= 3) confidence += 10; // Low risk
+        else if (riskLevel <= 5) confidence += 5; // Medium risk
+        
+        // Successful history = higher confidence (up to +10)
+        if (successfulRebalances >= 10) confidence += 10;
+        else if (successfulRebalances >= 5) confidence += 5;
+        
+        // Cap at 95 (never 100% certain)
+        if (confidence > 95) confidence = 95;
+        
+        return confidence;
     }
     
     /**
@@ -285,10 +357,11 @@ contract SomniaAgent is Ownable, ReentrancyGuard {
     }
     
     /**
-     * @notice Check if rebalancing is recommended by AI
+     * @notice Check if rebalancing is recommended using REAL on-chain data
      * @return shouldRebalance Whether rebalancing is recommended
      * @return targetStrategy Recommended target strategy
      * @return confidence AI confidence score
+     * @dev Uses real APY comparison and risk analysis
      */
     function checkRebalanceRecommendation()
         external
@@ -298,12 +371,38 @@ contract SomniaAgent is Ownable, ReentrancyGuard {
         address currentAdapter = vault.getCurrentAdapter();
         uint256 vaultTVL = vault.totalAssets();
         
-        return
-            somniaAI.getRebalanceRecommendation(
-                currentAdapter,
-                registeredStrategies,
-                vaultTVL
-            );
+        // Don't rebalance if TVL too low (gas efficiency)
+        if (vaultTVL < 0.001 ether) {
+            return (false, address(0), 0);
+        }
+        
+        // Get current strategy's REAL data
+        uint256 currentAPY = 0;
+        uint256 currentRisk = 10;
+        
+        if (currentAdapter != address(0)) {
+            try IStrategyAdapter(currentAdapter).estimatedAPY() returns (uint256 apy) {
+                currentAPY = apy;
+            } catch {}
+            
+            try IStrategyAdapter(currentAdapter).riskLevel() returns (uint8 risk) {
+                currentRisk = risk;
+            } catch {}
+        }
+        
+        // Find better strategy using REAL data
+        ISomniaAI.StrategyRecommendation memory recommendation = this.getAIRecommendation();
+        
+        // Calculate improvement threshold (must be significant to justify gas)
+        uint256 currentScore = currentAPY * (10 - currentRisk);
+        uint256 newScore = recommendation.riskAdjustedScore;
+        
+        // Rebalance only if improvement is > 20%
+        if (newScore > currentScore && ((newScore - currentScore) * 100) / currentScore > 20) {
+            return (true, recommendation.recommendedStrategy, recommendation.confidence);
+        }
+        
+        return (false, address(0), 0);
     }
     
     // ========== Internal Functions ==========
