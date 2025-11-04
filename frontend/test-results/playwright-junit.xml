@@ -1,0 +1,874 @@
+<testsuites id="" name="" tests="40" failures="36" skipped="0" errors="0" time="104.44026">
+<testsuite name="strategies-overview.spec.ts" timestamp="2025-08-19T19:32:44.806Z" hostname="chromium" tests="8" failures="6" skipped="0" time="168.805" errors="0">
+<testcase name="Strategies Overview Tests › should display strategies overview panel" classname="strategies-overview.spec.ts" time="20.14">
+<failure message="strategies-overview.spec.ts:10:3 should display strategies overview panel" type="FAILURE">
+<![CDATA[  [chromium] › strategies-overview.spec.ts:10:3 › Strategies Overview Tests › should display strategies overview panel 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategies-overview"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategies-overview"]')
+
+
+       9 |
+      10 |   test('should display strategies overview panel', async ({ page }) => {
+    > 11 |     await expect(page.locator(COMPONENT_SELECTORS.STRATEGIES_OVERVIEW)).toBeVisible();
+         |                                                                         ^
+      12 |   });
+      13 |
+      14 |   test('should show Venus strategy', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:11:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-35710-y-strategies-overview-panel-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-35710-y-strategies-overview-panel-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-35710-y-strategies-overview-panel-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-35710-y-strategies-overview-panel-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Venus strategy" classname="strategies-overview.spec.ts" time="20.273">
+<failure message="strategies-overview.spec.ts:14:3 should show Venus strategy" type="FAILURE">
+<![CDATA[  [chromium] › strategies-overview.spec.ts:14:3 › Strategies Overview Tests › should show Venus strategy 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategy-venus"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategy-venus"]')
+
+
+      14 |   test('should show Venus strategy', async ({ page }) => {
+      15 |     const venusStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_VENUS);
+    > 16 |     await expect(venusStrategy).toBeVisible();
+         |                                 ^
+      17 |   });
+      18 |
+      19 |   test('should show Beefy strategy', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:16:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-afb8f--should-show-Venus-strategy-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-afb8f--should-show-Venus-strategy-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-afb8f--should-show-Venus-strategy-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-afb8f--should-show-Venus-strategy-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Beefy strategy" classname="strategies-overview.spec.ts" time="20.692">
+<failure message="strategies-overview.spec.ts:19:3 should show Beefy strategy" type="FAILURE">
+<![CDATA[  [chromium] › strategies-overview.spec.ts:19:3 › Strategies Overview Tests › should show Beefy strategy 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategy-beefy"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategy-beefy"]')
+
+
+      19 |   test('should show Beefy strategy', async ({ page }) => {
+      20 |     const beefyStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_BEEFY);
+    > 21 |     await expect(beefyStrategy).toBeVisible();
+         |                                 ^
+      22 |   });
+      23 |
+      24 |   test('should show PancakeSwap strategy', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:21:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-5ccd9--should-show-Beefy-strategy-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-5ccd9--should-show-Beefy-strategy-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-5ccd9--should-show-Beefy-strategy-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-5ccd9--should-show-Beefy-strategy-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should show PancakeSwap strategy" classname="strategies-overview.spec.ts" time="20.271">
+<failure message="strategies-overview.spec.ts:24:3 should show PancakeSwap strategy" type="FAILURE">
+<![CDATA[  [chromium] › strategies-overview.spec.ts:24:3 › Strategies Overview Tests › should show PancakeSwap strategy 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategy-pancake"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategy-pancake"]')
+
+
+      24 |   test('should show PancakeSwap strategy', async ({ page }) => {
+      25 |     const pancakeStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_PANCAKE);
+    > 26 |     await expect(pancakeStrategy).toBeVisible();
+         |                                   ^
+      27 |   });
+      28 |
+      29 |   test('should show Aave strategy', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:26:35
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-497cd-d-show-PancakeSwap-strategy-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-497cd-d-show-PancakeSwap-strategy-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-497cd-d-show-PancakeSwap-strategy-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-497cd-d-show-PancakeSwap-strategy-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Aave strategy" classname="strategies-overview.spec.ts" time="22.24">
+<failure message="strategies-overview.spec.ts:29:3 should show Aave strategy" type="FAILURE">
+<![CDATA[  [chromium] › strategies-overview.spec.ts:29:3 › Strategies Overview Tests › should show Aave strategy 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategy-aave"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategy-aave"]')
+
+
+      29 |   test('should show Aave strategy', async ({ page }) => {
+      30 |     const aaveStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_AAVE);
+    > 31 |     await expect(aaveStrategy).toBeVisible();
+         |                                ^
+      32 |   });
+      33 |
+      34 |   test('should handle strategy selection', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:31:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-cbd60-s-should-show-Aave-strategy-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-cbd60-s-should-show-Aave-strategy-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-cbd60-s-should-show-Aave-strategy-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-cbd60-s-should-show-Aave-strategy-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should handle strategy selection" classname="strategies-overview.spec.ts" time="43.108">
+<failure message="strategies-overview.spec.ts:34:3 should handle strategy selection" type="FAILURE">
+<![CDATA[  [chromium] › strategies-overview.spec.ts:34:3 › Strategies Overview Tests › should handle strategy selection 
+
+    TimeoutError: locator.click: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="strategy-venus"]')
+
+
+      34 |   test('should handle strategy selection', async ({ page }) => {
+      35 |     const venusStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_VENUS);
+    > 36 |     await venusStrategy.click();
+         |                         ^
+      37 |     
+      38 |     // Should show strategy details or navigate to strategy page
+      39 |     await page.waitForTimeout(1000);
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:36:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-429b8-d-handle-strategy-selection-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-429b8-d-handle-strategy-selection-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-429b8-d-handle-strategy-selection-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-429b8-d-handle-strategy-selection-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should display strategy comparison if available" classname="strategies-overview.spec.ts" time="10.91">
+</testcase>
+<testcase name="Strategies Overview Tests › should validate all strategy elements have data" classname="strategies-overview.spec.ts" time="11.171">
+</testcase>
+</testsuite>
+<testsuite name="strategies-overview.spec.ts" timestamp="2025-08-19T19:32:44.806Z" hostname="firefox" tests="8" failures="8" skipped="0" time="0.026" errors="0">
+<testcase name="Strategies Overview Tests › should display strategies overview panel" classname="strategies-overview.spec.ts" time="0.003">
+<failure message="strategies-overview.spec.ts:10:3 should display strategies overview panel" type="FAILURE">
+<![CDATA[  [firefox] › strategies-overview.spec.ts:10:3 › Strategies Overview Tests › should display strategies overview panel 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/firefox-1489/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Venus strategy" classname="strategies-overview.spec.ts" time="0.003">
+<failure message="strategies-overview.spec.ts:14:3 should show Venus strategy" type="FAILURE">
+<![CDATA[  [firefox] › strategies-overview.spec.ts:14:3 › Strategies Overview Tests › should show Venus strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/firefox-1489/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Beefy strategy" classname="strategies-overview.spec.ts" time="0.006">
+<failure message="strategies-overview.spec.ts:19:3 should show Beefy strategy" type="FAILURE">
+<![CDATA[  [firefox] › strategies-overview.spec.ts:19:3 › Strategies Overview Tests › should show Beefy strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/firefox-1489/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show PancakeSwap strategy" classname="strategies-overview.spec.ts" time="0.006">
+<failure message="strategies-overview.spec.ts:24:3 should show PancakeSwap strategy" type="FAILURE">
+<![CDATA[  [firefox] › strategies-overview.spec.ts:24:3 › Strategies Overview Tests › should show PancakeSwap strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/firefox-1489/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Aave strategy" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:29:3 should show Aave strategy" type="FAILURE">
+<![CDATA[  [firefox] › strategies-overview.spec.ts:29:3 › Strategies Overview Tests › should show Aave strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/firefox-1489/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should handle strategy selection" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:34:3 should handle strategy selection" type="FAILURE">
+<![CDATA[  [firefox] › strategies-overview.spec.ts:34:3 › Strategies Overview Tests › should handle strategy selection 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/firefox-1489/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should display strategy comparison if available" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:42:3 should display strategy comparison if available" type="FAILURE">
+<![CDATA[  [firefox] › strategies-overview.spec.ts:42:3 › Strategies Overview Tests › should display strategy comparison if available 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/firefox-1489/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should validate all strategy elements have data" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:51:3 should validate all strategy elements have data" type="FAILURE">
+<![CDATA[  [firefox] › strategies-overview.spec.ts:51:3 › Strategies Overview Tests › should validate all strategy elements have data 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/firefox-1489/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="strategies-overview.spec.ts" timestamp="2025-08-19T19:32:44.806Z" hostname="webkit" tests="8" failures="8" skipped="0" time="0.017" errors="0">
+<testcase name="Strategies Overview Tests › should display strategies overview panel" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:10:3 should display strategies overview panel" type="FAILURE">
+<![CDATA[  [webkit] › strategies-overview.spec.ts:10:3 › Strategies Overview Tests › should display strategies overview panel 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Venus strategy" classname="strategies-overview.spec.ts" time="0.003">
+<failure message="strategies-overview.spec.ts:14:3 should show Venus strategy" type="FAILURE">
+<![CDATA[  [webkit] › strategies-overview.spec.ts:14:3 › Strategies Overview Tests › should show Venus strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Beefy strategy" classname="strategies-overview.spec.ts" time="0.001">
+<failure message="strategies-overview.spec.ts:19:3 should show Beefy strategy" type="FAILURE">
+<![CDATA[  [webkit] › strategies-overview.spec.ts:19:3 › Strategies Overview Tests › should show Beefy strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show PancakeSwap strategy" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:24:3 should show PancakeSwap strategy" type="FAILURE">
+<![CDATA[  [webkit] › strategies-overview.spec.ts:24:3 › Strategies Overview Tests › should show PancakeSwap strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Aave strategy" classname="strategies-overview.spec.ts" time="0.003">
+<failure message="strategies-overview.spec.ts:29:3 should show Aave strategy" type="FAILURE">
+<![CDATA[  [webkit] › strategies-overview.spec.ts:29:3 › Strategies Overview Tests › should show Aave strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should handle strategy selection" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:34:3 should handle strategy selection" type="FAILURE">
+<![CDATA[  [webkit] › strategies-overview.spec.ts:34:3 › Strategies Overview Tests › should handle strategy selection 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should display strategy comparison if available" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:42:3 should display strategy comparison if available" type="FAILURE">
+<![CDATA[  [webkit] › strategies-overview.spec.ts:42:3 › Strategies Overview Tests › should display strategy comparison if available 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should validate all strategy elements have data" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:51:3 should validate all strategy elements have data" type="FAILURE">
+<![CDATA[  [webkit] › strategies-overview.spec.ts:51:3 › Strategies Overview Tests › should validate all strategy elements have data 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="strategies-overview.spec.ts" timestamp="2025-08-19T19:32:44.806Z" hostname="Mobile Chrome" tests="8" failures="6" skipped="0" time="117.989" errors="0">
+<testcase name="Strategies Overview Tests › should display strategies overview panel" classname="strategies-overview.spec.ts" time="15.26">
+<failure message="strategies-overview.spec.ts:10:3 should display strategies overview panel" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › strategies-overview.spec.ts:10:3 › Strategies Overview Tests › should display strategies overview panel 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategies-overview"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategies-overview"]')
+
+
+       9 |
+      10 |   test('should display strategies overview panel', async ({ page }) => {
+    > 11 |     await expect(page.locator(COMPONENT_SELECTORS.STRATEGIES_OVERVIEW)).toBeVisible();
+         |                                                                         ^
+      12 |   });
+      13 |
+      14 |   test('should show Venus strategy', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:11:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-35710-y-strategies-overview-panel-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-35710-y-strategies-overview-panel-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-35710-y-strategies-overview-panel-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-35710-y-strategies-overview-panel-Mobile-Chrome/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Venus strategy" classname="strategies-overview.spec.ts" time="15.326">
+<failure message="strategies-overview.spec.ts:14:3 should show Venus strategy" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › strategies-overview.spec.ts:14:3 › Strategies Overview Tests › should show Venus strategy 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategy-venus"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategy-venus"]')
+
+
+      14 |   test('should show Venus strategy', async ({ page }) => {
+      15 |     const venusStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_VENUS);
+    > 16 |     await expect(venusStrategy).toBeVisible();
+         |                                 ^
+      17 |   });
+      18 |
+      19 |   test('should show Beefy strategy', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:16:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-afb8f--should-show-Venus-strategy-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-afb8f--should-show-Venus-strategy-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-afb8f--should-show-Venus-strategy-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-afb8f--should-show-Venus-strategy-Mobile-Chrome/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Beefy strategy" classname="strategies-overview.spec.ts" time="12.634">
+<failure message="strategies-overview.spec.ts:19:3 should show Beefy strategy" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › strategies-overview.spec.ts:19:3 › Strategies Overview Tests › should show Beefy strategy 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategy-beefy"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategy-beefy"]')
+
+
+      19 |   test('should show Beefy strategy', async ({ page }) => {
+      20 |     const beefyStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_BEEFY);
+    > 21 |     await expect(beefyStrategy).toBeVisible();
+         |                                 ^
+      22 |   });
+      23 |
+      24 |   test('should show PancakeSwap strategy', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:21:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-5ccd9--should-show-Beefy-strategy-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-5ccd9--should-show-Beefy-strategy-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-5ccd9--should-show-Beefy-strategy-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-5ccd9--should-show-Beefy-strategy-Mobile-Chrome/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should show PancakeSwap strategy" classname="strategies-overview.spec.ts" time="16.759">
+<failure message="strategies-overview.spec.ts:24:3 should show PancakeSwap strategy" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › strategies-overview.spec.ts:24:3 › Strategies Overview Tests › should show PancakeSwap strategy 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategy-pancake"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategy-pancake"]')
+
+
+      24 |   test('should show PancakeSwap strategy', async ({ page }) => {
+      25 |     const pancakeStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_PANCAKE);
+    > 26 |     await expect(pancakeStrategy).toBeVisible();
+         |                                   ^
+      27 |   });
+      28 |
+      29 |   test('should show Aave strategy', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:26:35
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-497cd-d-show-PancakeSwap-strategy-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-497cd-d-show-PancakeSwap-strategy-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-497cd-d-show-PancakeSwap-strategy-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-497cd-d-show-PancakeSwap-strategy-Mobile-Chrome/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Aave strategy" classname="strategies-overview.spec.ts" time="16.988">
+<failure message="strategies-overview.spec.ts:29:3 should show Aave strategy" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › strategies-overview.spec.ts:29:3 › Strategies Overview Tests › should show Aave strategy 
+
+    Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('[data-testid="strategy-aave"]')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('[data-testid="strategy-aave"]')
+
+
+      29 |   test('should show Aave strategy', async ({ page }) => {
+      30 |     const aaveStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_AAVE);
+    > 31 |     await expect(aaveStrategy).toBeVisible();
+         |                                ^
+      32 |   });
+      33 |
+      34 |   test('should handle strategy selection', async ({ page }) => {
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:31:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-cbd60-s-should-show-Aave-strategy-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-cbd60-s-should-show-Aave-strategy-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-cbd60-s-should-show-Aave-strategy-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-cbd60-s-should-show-Aave-strategy-Mobile-Chrome/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should handle strategy selection" classname="strategies-overview.spec.ts" time="36.149">
+<failure message="strategies-overview.spec.ts:34:3 should handle strategy selection" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › strategies-overview.spec.ts:34:3 › Strategies Overview Tests › should handle strategy selection 
+
+    TimeoutError: locator.click: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="strategy-venus"]')
+
+
+      34 |   test('should handle strategy selection', async ({ page }) => {
+      35 |     const venusStrategy = page.locator(COMPONENT_SELECTORS.STRATEGY_VENUS);
+    > 36 |     await venusStrategy.click();
+         |                         ^
+      37 |     
+      38 |     // Should show strategy details or navigate to strategy page
+      39 |     await page.waitForTimeout(1000);
+        at /Users/s/ming-template/base hack/AION_AI_Agent/frontend/src/testing/automated/e2e/strategies-overview.spec.ts:36:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-429b8-d-handle-strategy-selection-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../../test-results/playwright-artifacts/strategies-overview-Strate-429b8-d-handle-strategy-selection-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-429b8-d-handle-strategy-selection-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|playwright-artifacts/strategies-overview-Strate-429b8-d-handle-strategy-selection-Mobile-Chrome/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Strategies Overview Tests › should display strategy comparison if available" classname="strategies-overview.spec.ts" time="2.582">
+</testcase>
+<testcase name="Strategies Overview Tests › should validate all strategy elements have data" classname="strategies-overview.spec.ts" time="2.291">
+</testcase>
+</testsuite>
+<testsuite name="strategies-overview.spec.ts" timestamp="2025-08-19T19:32:44.806Z" hostname="Mobile Safari" tests="8" failures="8" skipped="0" time="0.027" errors="0">
+<testcase name="Strategies Overview Tests › should display strategies overview panel" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:10:3 should display strategies overview panel" type="FAILURE">
+<![CDATA[  [Mobile Safari] › strategies-overview.spec.ts:10:3 › Strategies Overview Tests › should display strategies overview panel 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Venus strategy" classname="strategies-overview.spec.ts" time="0.003">
+<failure message="strategies-overview.spec.ts:14:3 should show Venus strategy" type="FAILURE">
+<![CDATA[  [Mobile Safari] › strategies-overview.spec.ts:14:3 › Strategies Overview Tests › should show Venus strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Beefy strategy" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:19:3 should show Beefy strategy" type="FAILURE">
+<![CDATA[  [Mobile Safari] › strategies-overview.spec.ts:19:3 › Strategies Overview Tests › should show Beefy strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show PancakeSwap strategy" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:24:3 should show PancakeSwap strategy" type="FAILURE">
+<![CDATA[  [Mobile Safari] › strategies-overview.spec.ts:24:3 › Strategies Overview Tests › should show PancakeSwap strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should show Aave strategy" classname="strategies-overview.spec.ts" time="0.009">
+<failure message="strategies-overview.spec.ts:29:3 should show Aave strategy" type="FAILURE">
+<![CDATA[  [Mobile Safari] › strategies-overview.spec.ts:29:3 › Strategies Overview Tests › should show Aave strategy 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should handle strategy selection" classname="strategies-overview.spec.ts" time="0.003">
+<failure message="strategies-overview.spec.ts:34:3 should handle strategy selection" type="FAILURE">
+<![CDATA[  [Mobile Safari] › strategies-overview.spec.ts:34:3 › Strategies Overview Tests › should handle strategy selection 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should display strategy comparison if available" classname="strategies-overview.spec.ts" time="0.004">
+<failure message="strategies-overview.spec.ts:42:3 should display strategy comparison if available" type="FAILURE">
+<![CDATA[  [Mobile Safari] › strategies-overview.spec.ts:42:3 › Strategies Overview Tests › should display strategy comparison if available 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Strategies Overview Tests › should validate all strategy elements have data" classname="strategies-overview.spec.ts" time="0.002">
+<failure message="strategies-overview.spec.ts:51:3 should validate all strategy elements have data" type="FAILURE">
+<![CDATA[  [Mobile Safari] › strategies-overview.spec.ts:51:3 › Strategies Overview Tests › should validate all strategy elements have data 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/s/Library/Caches/ms-playwright/webkit-2191/pw_run.sh
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

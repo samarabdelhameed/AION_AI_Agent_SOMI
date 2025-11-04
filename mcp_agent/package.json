@@ -1,0 +1,64 @@
+{
+  "name": "aion-mcp-agent",
+  "version": "2.0.0",
+  "description": "AION AI Agent - Advanced MCP Server with Real Protocol Integration",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --runInBand",
+    "test:unit": "jest tests/unit --runInBand",
+    "test:integration": "jest tests/integration --runInBand",
+    "test:performance": "jest tests/performance --runInBand --testTimeout=60000",
+    "test:edge-cases": "jest tests/edge-cases --runInBand",
+    "test:smoke": "jest tests/smoke --runInBand",
+    "test:real-data": "jest tests/integration/real-data-integration.test.js --runInBand --testTimeout=60000",
+    "test:smart-contracts": "jest tests/integration/smart-contract-validation.test.js --runInBand --testTimeout=60000",
+    "test:stress": "jest tests/performance/real-data-stress.test.js --runInBand --testTimeout=120000",
+    "test:comprehensive": "jest tests/integration/comprehensive-integration.test.js --runInBand --testTimeout=120000",
+    "test:coverage": "jest --coverage --runInBand",
+    "test:watch": "jest --watch --runInBand",
+    "test:all": "npm run test:unit && npm run test:integration && npm run test:performance && npm run test:edge-cases && npm run test:smoke && npm run test:real-data && npm run test:smart-contracts && npm run test:stress && npm run test:comprehensive",
+    "test:enhanced": "node tests/enhanced_execution_test.mjs",
+    "test:mainnet": "node scripts/test-mainnet-integration.js",
+    "test:mainnet-integration": "node scripts/test-mainnet-integration.js",
+    "warmup": "node scripts/warmup.js"
+  },
+  "keywords": [
+    "defi",
+    "ai",
+    "mcp",
+    "blockchain",
+    "yield-farming"
+  ],
+  "author": "AION Team",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^8.4.0",
+    "@fastify/rate-limit": "^9.0.1",
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "axios": "^1.6.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.8.1",
+    "fastify": "^4.24.3",
+    "node-fetch": "^3.3.2",
+    "pino": "^8.16.1",
+    "prom-client": "^15.0.0",
+    "rate-limiter-flexible": "^2.4.2",
+    "supertest": "^6.3.3",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-jest": "^30.0.5",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

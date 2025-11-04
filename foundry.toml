@@ -1,0 +1,20 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "forge-std/=lib/forge-std/src/"
+]
+chain_id = 97
+solc_version = "0.8.30"
+optimizer = false
+optimizer_runs = 200
+
+[rpc_endpoints]
+bsctest = "https://data-seed-prebsc-1-s1.binance.org:8545"
+bnbTestnet = "https://bsc-testnet.public.blastapi.io"
+bnbMainnet = "${BNB_MAINNET_RPC_URL}"
+
+[profile.fork]
+url = "https://bsc-testnet.publicnode.com" 

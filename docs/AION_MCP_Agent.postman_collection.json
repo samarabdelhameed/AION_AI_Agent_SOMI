@@ -1,0 +1,276 @@
+{
+  "info": {
+    "name": "AION MCP Agent API Collection",
+    "description": "Complete API collection for AION AI Agent with all endpoints including Proof-of-Yield, MCP Tools, and DeFi operations",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3001",
+      "type": "string"
+    },
+    {
+      "key": "userAddress",
+      "value": "0x742d35Cc6665C38e7f0fCc170cD8984eA8e33517",
+      "type": "string"
+    },
+    {
+      "key": "adapterAddress",
+      "value": "0x1234567890123456789012345678901234567890",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "🏥 Health & Status",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/healthz",
+              "host": ["{{baseUrl}}"],
+              "path": ["healthz"]
+            }
+          }
+        },
+        {
+          "name": "System Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": ["{{baseUrl}}"],
+              "path": [""]
+            }
+          }
+        },
+        {
+          "name": "Prometheus Metrics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/metrics",
+              "host": ["{{baseUrl}}"],
+              "path": ["metrics"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🔧 MCP Tools",
+      "item": [
+        {
+          "name": "MCP Tools Specification",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/mcp/tools",
+              "host": ["{{baseUrl}}"],
+              "path": ["mcp", "tools"]
+            }
+          }
+        },
+        {
+          "name": "MCP Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/mcp/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["mcp", "health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🤖 AI Agent",
+      "item": [
+        {
+          "name": "Agent Decide Strategy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userAddress\": \"{{userAddress}}\",\n  \"amountBNB\": 1.5,\n  \"intent\": \"moderate\",\n  \"network\": \"bsc\",\n  \"preferredProtocols\": [\"venus\", \"pancakeswap\"]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/agent/decide",
+              "host": ["{{baseUrl}}"],
+              "path": ["agent", "decide"]
+            }
+          }
+        },
+        {
+          "name": "Agent Execute Action (Simulate)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userAddress\": \"{{userAddress}}\",\n  \"action\": \"deposit\",\n  \"amountBNB\": 1.0,\n  \"strategy\": \"venus\",\n  \"network\": \"bsc\",\n  \"simulate\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/agent/execute",
+              "host": ["{{baseUrl}}"],
+              "path": ["agent", "execute"]
+            }
+          }
+        },
+        {
+          "name": "Agent Execute Action (Real)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userAddress\": \"{{userAddress}}\",\n  \"action\": \"deposit\",\n  \"amountBNB\": 0.1,\n  \"strategy\": \"venus\",\n  \"network\": \"bsc\",\n  \"simulate\": false\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/agent/execute",
+              "host": ["{{baseUrl}}"],
+              "path": ["agent", "execute"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "📊 Proof-of-Yield",
+      "item": [
+        {
+          "name": "Strategy Proof Data",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/defi/proof/strategy/{{adapterAddress}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["defi", "proof", "strategy", "{{adapterAddress}}"]
+            }
+          }
+        },
+        {
+          "name": "User Earnings Data",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/defi/proof/user/{{userAddress}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["defi", "proof", "user", "{{userAddress}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "📈 Market Data",
+      "item": [
+        {
+          "name": "Market Snapshot",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/market/snapshot?network=bsc",
+              "host": ["{{baseUrl}}"],
+              "path": ["market", "snapshot"],
+              "query": [
+                {
+                  "key": "network",
+                  "value": "bsc"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🔄 Timeline & History",
+      "item": [
+        {
+          "name": "User Timeline",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/timeline/{{userAddress}}?limit=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["timeline", "{{userAddress}}"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Auto-generate trace ID for each request",
+          "pm.globals.set('traceId', 'req-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9));"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Common tests for all requests",
+          "pm.test('Response time is less than 10s', function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(10000);",
+          "});",
+          "",
+          "pm.test('Response has trace ID header', function () {",
+          "    pm.expect(pm.response.headers.get('X-Trace-ID')).to.not.be.undefined;",
+          "});",
+          "",
+          "// Test for successful responses",
+          "if (pm.response.code === 200) {",
+          "    pm.test('Successful response has timestamp', function () {",
+          "        const jsonData = pm.response.json();",
+          "        pm.expect(jsonData.timestamp || jsonData.metadata?.timestamp).to.not.be.undefined;",
+          "    });",
+          "}"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "contracts": {
+    "aionVault": {
+      "address": "0xB176c1FA7B3feC56cB23681B6E447A7AE60C5254",
+      "network": "bscMainnet",
+      "chainId": 56,
+      "verified": true,
+      "deploymentDate": "2024-12-13",
+      "bscScanUrl": "https://bscscan.com/address/0xB176c1FA7B3feC56cB23681B6E447A7AE60C5254"
+    },
+    "strategyVenus": {
+      "address": "0x9D20A69E95CFEc37E5BC22c0D4218A705d90EdcB",
+      "network": "bscMainnet",
+      "chainId": 56,
+      "verified": true,
+      "deploymentDate": "2024-12-13",
+      "bscScanUrl": "https://bscscan.com/address/0x9d20a69e95cfec37e5bc22c0d4218a705d90edcb"
+    },
+    "strategyAave": {
+      "address": "0xd34A6Cbc0f9Aab0B2896aeFb957cB00485CD56Db",
+      "network": "bscMainnet",
+      "chainId": 56,
+      "verified": true,
+      "deploymentDate": "2024-12-13",
+      "bscScanUrl": "https://bscscan.com/address/0xd34a6cbc0f9aab0b2896aefb957cb00485cd56db"
+    },
+    "strategyCompound": {
+      "address": "0x5B7575272cB12317EB5D8E8D9620A9A34A7a3dE4",
+      "network": "bscMainnet",
+      "chainId": 56,
+      "verified": true,
+      "deploymentDate": "2024-12-13",
+      "bscScanUrl": "https://bscscan.com/address/0x5b7575272cb12317eb5d8e8d9620a9a34a7a3de4"
+    },
+    "strategyWombat": {
+      "address": "0xF8C5804Bdf6875EBB6cCf70Fc7f3ee6745Cecd98",
+      "network": "bscMainnet",
+      "chainId": 56,
+      "verified": true,
+      "deploymentDate": "2024-12-13",
+      "bscScanUrl": "https://bscscan.com/address/0xf8c5804bdf6875ebb6ccf70fc7f3ee6745cecd98"
+    },
+    "strategyBeefy": {
+      "address": "0x3a5EB0C7c7Ae43598cd31A1e23Fd722e40ceF5F4",
+      "network": "bscMainnet",
+      "chainId": 56,
+      "verified": true,
+      "deploymentDate": "2024-12-13",
+      "bscScanUrl": "https://bscscan.com/address/0x3a5eb0c7c7ae43598cd31a1e23fd722e40cef5f4"
+    },
+    "strategyMorpho": {
+      "address": "0x75B0EF811CB728aFdaF395a0b17341fb426c26dD",
+      "network": "bscMainnet",
+      "chainId": 56,
+      "verified": true,
+      "deploymentDate": "2024-12-13",
+      "bscScanUrl": "https://bscscan.com/address/0x75b0ef811cb728afdaf395a0b17341fb426c26dd"
+    },
+    "strategyPancake": {
+      "address": "0xf2116eE783Be82ba51a6Eda9453dFD6A1723d205",
+      "network": "bscMainnet",
+      "chainId": 56,
+      "verified": true,
+      "deploymentDate": "2024-12-13",
+      "bscScanUrl": "https://bscscan.com/address/0xf2116ee783be82ba51a6eda9453dfd6a1723d205"
+    },
+    "strategyUniswap": {
+      "address": "0xBd992799d17991933316de4340135C5f240334E6",
+      "network": "bscMainnet",
+      "chainId": 56,
+      "verified": true,
+      "deploymentDate": "2024-12-13",
+      "bscScanUrl": "https://bscscan.com/address/0xbd992799d17991933316de4340135c5f240334e6"
+    }
+  },
+  "protocols": {
+    "venus": {
+      "comptroller": "0xfD36E2c2a6789Db23113685031d7F16329158384",
+      "vBNB": "0xA07c5b74C9B40447a954e1466938b865b6BBea36",
+      "vUSDT": "0xfD5840Cd36d94D7229439859C0112a4185BC0255",
+      "vBUSD": "0x95c78222B3D6e262426483D42CfA53685A67Ab9D"
+    },
+    "pancakeswap": {
+      "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+      "masterChef": "0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652"
+    },
+    "tokens": {
+      "BUSD": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+      "USDT": "0x55d398326f99059fF775485246999027B3197955",
+      "WBNB": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      "CAKE": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82"
+    }
+  },
+  "networks": {
+    "bscMainnet": {
+      "name": "BSC Mainnet",
+      "chainId": 56,
+      "rpcUrls": [
+        "https://bsc-dataseed1.binance.org",
+        "https://bsc-dataseed2.binance.org",
+        "https://bsc-dataseed3.binance.org",
+        "https://bsc-dataseed4.binance.org"
+      ],
+      "blockExplorer": "https://bscscan.com",
+      "nativeCurrency": {
+        "name": "BNB",
+        "symbol": "BNB",
+        "decimals": 18
+      }
+    },
+    "bscTestnet": {
+      "name": "BSC Testnet",
+      "chainId": 97,
+      "rpcUrls": [
+        "https://bsc-testnet.publicnode.com",
+        "https://bsc-testnet.public.blastapi.io"
+      ],
+      "blockExplorer": "https://testnet.bscscan.com",
+      "nativeCurrency": {
+        "name": "BNB",
+        "symbol": "BNB",
+        "decimals": 18
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-12-13",
+    "totalContracts": 9,
+    "verifiedContracts": 9,
+    "deploymentNetwork": "bscMainnet",
+    "projectName": "AION Vault",
+    "description": "AI-powered yield optimization vault with multi-strategy support"
+  }
+}

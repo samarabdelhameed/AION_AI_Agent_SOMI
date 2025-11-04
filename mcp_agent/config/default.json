@@ -1,0 +1,99 @@
+{
+  "server": {
+    "port": 3001,
+    "host": "localhost",
+    "timeout": 30000,
+    "cors": {
+      "enabled": true,
+      "origins": ["http://localhost:3000", "http://localhost:5173"],
+      "credentials": true
+    }
+  },
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "aion_mcp",
+    "username": "postgres",
+    "password": "password",
+    "pool": {
+      "min": 2,
+      "max": 10,
+      "acquireTimeoutMillis": 60000,
+      "idleTimeoutMillis": 30000
+    },
+    "ssl": false
+  },
+  "cache": {
+    "provider": "memory",
+    "ttl": 300000,
+    "maxSize": 1000,
+    "redis": {
+      "host": "localhost",
+      "port": 6379,
+      "db": 0
+    }
+  },
+  "security": {
+    "jwtSecret": "change-me-in-production",
+    "jwtExpiresIn": "24h",
+    "bcryptRounds": 12,
+    "rateLimitWindow": 60000,
+    "rateLimitMax": 100,
+    "corsOrigins": ["http://localhost:3000"],
+    "trustedProxies": []
+  },
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "file": "./logs/app.log",
+    "console": true,
+    "maxFiles": 5,
+    "maxSize": "10m"
+  },
+  "blockchain": {
+    "networks": {
+      "bscTestnet": {
+        "rpc": "https://data-seed-prebsc-1-s1.binance.org:8545/",
+        "chainId": 97,
+        "gasPrice": "10000000000",
+        "gasLimit": "8000000"
+      },
+      "bscMainnet": {
+        "rpc": "https://bsc-dataseed1.binance.org/",
+        "chainId": 56,
+        "gasPrice": "5000000000",
+        "gasLimit": "8000000"
+      }
+    },
+    "defaultNetwork": "bscTestnet",
+    "retryAttempts": 3,
+    "retryDelay": 1000
+  },
+  "oracle": {
+    "dataSources": {
+      "coingecko": {
+        "baseUrl": "https://api.coingecko.com/api/v3",
+        "rateLimit": 50,
+        "timeout": 10000
+      },
+      "binance": {
+        "baseUrl": "https://api.binance.com/api/v3",
+        "rateLimit": 1200,
+        "timeout": 5000
+      },
+      "defillama": {
+        "baseUrl": "https://api.llama.fi",
+        "rateLimit": 300,
+        "timeout": 15000
+      }
+    },
+    "cacheTimeout": 30000,
+    "fallbackEnabled": true
+  },
+  "mcp": {
+    "serverPort": 3001,
+    "maxConnections": 100,
+    "heartbeatInterval": 30000,
+    "requestTimeout": 60000
+  }
+}

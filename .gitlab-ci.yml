@@ -1,0 +1,24 @@
+# GitLab CI/CD Pipeline for AION AI Agent - Simplified for Pages
+image: node:18
+
+# Cache node_modules for faster builds
+cache:
+  paths:
+    - frontend/node_modules/
+
+# Deploy to GitLab Pages
+pages:
+  stage: deploy
+  before_script:
+    - cd frontend
+    - npm ci
+  script:
+    - npm run build
+    - cd ..
+    - mkdir public
+    - cp -r frontend/dist/* public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

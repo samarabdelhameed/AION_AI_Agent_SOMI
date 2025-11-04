@@ -1,0 +1,96 @@
+{
+  "server": {
+    "port": 8080,
+    "host": "0.0.0.0",
+    "timeout": 60000
+  },
+  "database": {
+    "host": "prod-db-host",
+    "name": "aion_mcp_prod",
+    "ssl": true,
+    "pool": {
+      "min": 5,
+      "max": 20
+    }
+  },
+  "logging": {
+    "level": "warn",
+    "console": false,
+    "file": "/var/log/aion-mcp/app.log"
+  },
+  "security": {
+    "rateLimitMax": 50,
+    "corsOrigins": ["https://app.aion.com"],
+    "trustedProxies": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"]
+  },
+  "blockchain": {
+    "defaultNetwork": "bscMainnet",
+    "retryAttempts": 5,
+    "networks": {
+      "bscMainnet": {
+        "name": "BSC Mainnet",
+        "chainId": 56,
+        "rpcUrl": "https://bsc-dataseed1.binance.org",
+        "blockExplorer": "https://bscscan.com",
+        "nativeCurrency": {
+          "name": "BNB",
+          "symbol": "BNB",
+          "decimals": 18
+        }
+      },
+      "bscTestnet": {
+        "name": "BSC Testnet",
+        "chainId": 97,
+        "rpcUrl": "https://bsc-testnet.publicnode.com",
+        "blockExplorer": "https://testnet.bscscan.com",
+        "nativeCurrency": {
+          "name": "BNB",
+          "symbol": "BNB",
+          "decimals": 18
+        }
+      }
+    },
+    "contracts": {
+      "aionVault": {
+        "mainnet": "0xB176c1FA7B3feC56cB23681B6E447A7AE60C5254",
+        "testnet": "0xYourTestnetAddress"
+      },
+      "strategies": {
+        "venus": "0x9D20A69E95CFEc37E5BC22c0D4218A705d90EdcB",
+        "aave": "0xd34A6Cbc0f9Aab0B2896aeFb957cB00485CD56Db",
+        "compound": "0x5B7575272cB12317EB5D8E8D9620A9A34A7a3dE4",
+        "wombat": "0xF8C5804Bdf6875EBB6cCf70Fc7f3ee6745Cecd98",
+        "beefy": "0x3a5EB0C7c7Ae43598cd31A1e23Fd722e40ceF5F4",
+        "morpho": "0x75B0EF811CB728aFdaF395a0b17341fb426c26dD",
+        "pancake": "0xf2116eE783Be82ba51a6Eda9453dFD6A1723d205",
+        "uniswap": "0xBd992799d17991933316de4340135C5f240334E6"
+      }
+    }
+  },
+  "cache": {
+    "provider": "redis",
+    "ttl": 600000,
+    "maxSize": 10000
+  },
+  "oracle": {
+    "cacheTimeout": 60000
+  },
+  "apis": {
+    "bscscan": {
+      "apiKey": "JJQR8VFRG9JNAWEA1WZWINQZ5YGPFRQZ2B",
+      "baseUrl": "https://api.bscscan.com/api"
+    },
+    "binance": {
+      "baseUrl": "https://api.binance.com/api/v3"
+    },
+    "defillama": {
+      "baseUrl": "https://api.llama.fi"
+    },
+    "venus": {
+      "baseUrl": "https://api.venus.io/api"
+    },
+    "coingecko": {
+      "baseUrl": "https://api.coingecko.com/api/v3"
+    }
+  }
+}

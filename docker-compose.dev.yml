@@ -1,0 +1,108 @@
+version: '3.8'
+
+services:
+  # MCP Agent Backend
+  mcp-agent:
+    build:
+      context: ./mcp_agent
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=development
+      - PORT=3003
+      - LOG_LEVEL=debug
+      - BSC_RPC_URL=https://bsc-dataseed.binance.org/
+      - BSC_TESTNET_RPC_URL=https://data-seed-prebsc-1-s1.binance.org:8545/
+      - CORS_ORIGIN=http://localhost:5173
+    volumes:
+      - ./mcp_agent:/app
+      - /app/node_modules
+      - ./logs:/app/logs
+    networks:
+      - aion-dev
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  # Frontend Development Server
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_APP_NAME=AION DeFi Platform
+      - VITE_MCP_URL=http://mcp-agent:3003
+      - VITE_BSC_RPC_URL=https://bsc-dataseed.binance.org/
+      - VITE_BSC_TESTNET_RPC_URL=https://data-seed-prebsc-1-s1.binance.org:8545/
+      - VITE_DEBUG_MODE=true
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - ./logs:/app/logs
+    networks:
+      - aion-dev
+    depends_on:
+      mcp-agent:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5173"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - aion-dev
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # MongoDB for data storage (optional)
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=aion_dev
+    volumes:
+      - mongodb-data:/data/db
+      - ./scripts/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - aion-dev
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+networks:
+  aion-dev:
+    driver: bridge
+    name: aion-development
+
+volumes:
+  redis-data:
+    name: aion-redis-data
+  mongodb-data:
+    name: aion-mongodb-data

@@ -1,0 +1,68 @@
+{
+  "name": "aion-defi-platform",
+  "version": "1.0.0",
+  "description": "AION - The Immortal AI DeFi Agent on BNBChain",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./scripts/start-dev.sh",
+    "start": "./scripts/start-dev.sh",
+    "start:mcp": "cd mcp_agent && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm ci && npm run build",
+    "vercel-build": "cd frontend && npm ci && npm run build",
+    "test": "npm run test:mcp && npm run test:frontend",
+    "test:mcp": "cd mcp_agent && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test:real-data": "cd mcp_agent && npm run test:real-data",
+    "test:smart-contracts": "cd mcp_agent && npm run test:smart-contracts",
+    "test:stress": "cd mcp_agent && npm run test:stress",
+    "test:comprehensive": "cd mcp_agent && npm run test:comprehensive",
+    "install:all": "npm install && cd mcp_agent && npm install && cd ../frontend && npm install",
+    "clean": "rm -rf node_modules mcp_agent/node_modules frontend/node_modules",
+    "clean:logs": "rm -rf logs/*",
+    "status": "./scripts/health-check.sh",
+    "stop": "./scripts/stop-dev.sh",
+    "restart": "./scripts/stop-dev.sh && ./scripts/start-dev.sh",
+    "logs": "tail -f logs/*.log",
+    "logs:mcp": "tail -f logs/mcp_agent.log",
+    "logs:frontend": "tail -f logs/frontend.log"
+  },
+  "keywords": [
+    "defi",
+    "ai",
+    "blockchain",
+    "bnbchain",
+    "yield-farming",
+    "smart-contracts",
+    "mcp-agent",
+    "react",
+    "typescript",
+    "ethers",
+    "foundry",
+    "web3",
+    "dapp",
+    "cryptocurrency",
+    "automated-trading",
+    "portfolio-management"
+  ],
+  "homepage": "https://github.com/samarabdelhameed/AION_AI_Agent#readme",
+  "bugs": {
+    "url": "https://github.com/samarabdelhameed/AION_AI_Agent/issues"
+  },
+  "author": "Samar Abdelhameed",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samarabdelhameed/AION_AI_Agent.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "ethers": "^6.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1"
+  }
+}
