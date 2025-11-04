@@ -17,6 +17,8 @@ bsctest = "https://data-seed-prebsc-1-s1.binance.org:8545"
 bnbTestnet = "https://bsc-testnet.public.blastapi.io"
 bnbMainnet = "${BNB_MAINNET_RPC_URL}"
 sepolia = "${SEPOLIA_RPC_URL}"
+somnia_testnet = "https://dream-rpc.somnia.network"
+somnia_devnet = "https://dream-rpc.somnia.network"
 
 [profile.fork]
 url = "https://bsc-testnet.publicnode.com"
