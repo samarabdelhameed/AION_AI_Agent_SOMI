@@ -4,9 +4,6 @@ pragma solidity ^0.8.30;
 import "forge-std/Script.sol";
 import "../src/AIONVault.sol";
 import "../src/SomniaAgent.sol";
-import "../src/mocks/SomniaAIMock.sol";
-import "../src/strategies/StrategyVenus.sol";
-import "../src/strategies/StrategyPancake.sol";
 
 /**
  * @title DeploySomniaAgent
@@ -16,10 +13,7 @@ import "../src/strategies/StrategyPancake.sol";
 contract DeploySomniaAgent is Script {
     // Deployment addresses will be logged
     address public vault;
-    address public somniaAI;
     address public agent;
-    address public venusStrategy;
-    address public pancakeStrategy;
     
     // Configuration
     uint256 public constant MIN_DEPOSIT = 0.001 ether; // 0.001 BNB minimum
@@ -46,56 +40,48 @@ contract DeploySomniaAgent is Script {
         console.log("   Vault deployed at:", vault);
         console.log("");
         
-        // 2. Deploy Somnia AI Mock (optional - agent uses real data primarily)
-        console.log("2. Deploying Somnia AI Mock (for compatibility)...");
-        SomniaAIMock somniaAIContract = new SomniaAIMock();
-        somniaAI = address(somniaAIContract);
-        console.log("   Somnia AI Mock deployed at:", somniaAI);
-        console.log("   Note: Agent uses REAL on-chain data for decisions");
-        console.log("");
-        
-        // 3. Deploy Somnia Agent (uses REAL on-chain data)
-        console.log("3. Deploying Somnia Agent...");
-        SomniaAgent agentContract = new SomniaAgent(vault, somniaAI);
+        // 2. Deploy Somnia Agent (uses 100% REAL on-chain data)
+        console.log("2. Deploying Somnia Agent...");
+        SomniaAgent agentContract = new SomniaAgent(vault);
         agent = address(agentContract);
         console.log("   Somnia Agent deployed at:", agent);
-        console.log("   Agent analyzes REAL APY, TVL, and risk data");
+        console.log("   Agent uses 100% REAL data - no mocks!");
+        console.log("   - Real APY from protocols");
+        console.log("   - Real TVL from strategies");
+        console.log("   - Real risk assessments");
         console.log("");
         
-        // 4. Set AI Agent in Vault
-        console.log("4. Configuring Vault...");
+        // 3. Set AI Agent in Vault
+        console.log("3. Configuring Vault...");
         vaultContract.setAIAgent(agent);
         console.log("   AI Agent set in Vault");
         console.log("");
         
-        // 5. Deploy Strategy Adapters (optional for demo)
-        console.log("5. Deploying Strategy Adapters...");
-        // Note: These are mock addresses for Somnia testnet
-        // In production, use actual protocol addresses
-        
-        // For now, we'll skip strategy deployment as they need protocol addresses
-        console.log("   Skipping strategy deployment (add protocol addresses first)");
+        // 4. Deploy Strategy Adapters (optional for demo)
+        console.log("4. Strategy Adapters...");
+        console.log("   Deploy strategies separately with real protocol addresses");
+        console.log("   Then register them with: agent.registerStrategy(strategyAddress)");
         console.log("");
         
         vm.stopBroadcast();
         
         // Print deployment summary
         console.log("===========================================");
-        console.log("DEPLOYMENT SUMMARY");
+        console.log("DEPLOYMENT SUMMARY - 100% REAL DATA");
         console.log("===========================================");
         console.log("AION Vault:", vault);
-        console.log("Somnia AI Mock:", somniaAI);
         console.log("Somnia Agent:", agent);
         console.log("");
         console.log("Configuration:");
         console.log("  Min Deposit:", MIN_DEPOSIT);
         console.log("  Min Yield Claim:", MIN_YIELD_CLAIM);
+        console.log("  Uses Real Data: YES (No Mocks!)");
         console.log("");
         console.log("Next Steps:");
         console.log("1. Verify contracts on block explorer");
-        console.log("2. Add strategy adapters");
-        console.log("3. Register strategies in Somnia Agent");
-        console.log("4. Test autonomous rebalancing");
+        console.log("2. Deploy strategy adapters with real protocol addresses");
+        console.log("3. Register strategies: agent.registerStrategy(address)");
+        console.log("4. Test with real data: agent.getAIRecommendation()");
         console.log("===========================================");
         
         // Save deployment addresses to file
@@ -106,9 +92,9 @@ contract DeploySomniaAgent is Script {
         string memory json = "deployment";
         
         vm.serializeAddress(json, "vault", vault);
-        vm.serializeAddress(json, "somniaAI", somniaAI);
         vm.serializeAddress(json, "agent", agent);
         vm.serializeAddress(json, "deployer", msg.sender);
+        vm.serializeBool(json, "usesRealData", true);
         string memory finalJson = vm.serializeUint(json, "timestamp", block.timestamp);
         
         string memory fileName = string.concat(

@@ -3,6 +3,7 @@
 ## ✅ المُنجَز (Completed)
 
 ### 1. Smart Contracts ✅
+
 - [x] **AIONVault.sol** - Core vault with shares-based accounting
 - [x] **SomniaAgent.sol** - AI agent with REAL on-chain data analysis
 - [x] **ISomniaAI.sol** - Interface for AI integration
@@ -14,12 +15,14 @@
 - [x] Circuit breaker and health checks
 
 ### 2. Deployment Infrastructure ✅
+
 - [x] **DeploySomniaAgent.s.sol** - Foundry deployment script
 - [x] **deploy_to_somnia.sh** - Automated bash script
 - [x] **foundry.toml** configured with Somnia RPC
 - [x] **.env.example** with configuration template
 
 ### 3. Documentation ✅
+
 - [x] **README.md** - Comprehensive, all-in-one documentation
 - [x] Deployment guide included
 - [x] Verification steps included
@@ -28,6 +31,7 @@
 - [x] Smart contract details
 
 ### 4. Code Quality ✅
+
 - [x] Uses real on-chain data (no mocks in production)
 - [x] Risk-adjusted scoring algorithm
 - [x] Confidence calculation (60-95%)
@@ -36,6 +40,7 @@
 - [x] Comprehensive events for tracking
 
 ### 5. Repository Setup ✅
+
 - [x] GitHub repository created
 - [x] Clean structure (no extra MD files)
 - [x] .gitignore properly configured
@@ -47,8 +52,10 @@
 ## ❌ الناقص (Pending - Need to Complete)
 
 ### 1. Deployment to Somnia Testnet ❌
+
 **Status**: Not deployed yet  
 **Required Actions**:
+
 - [ ] Get test STT tokens from faucet
 - [ ] Run `./deploy_to_somnia.sh`
 - [ ] Save contract addresses
@@ -59,8 +66,10 @@
 ---
 
 ### 2. Contract Verification ❌
+
 **Status**: Waiting for deployment  
 **Required Actions**:
+
 - [ ] Verify AIONVault on block explorer
 - [ ] Verify SomniaAgent on block explorer
 - [ ] Verify SomniaAIMock on block explorer
@@ -71,18 +80,22 @@
 ---
 
 ### 3. Update README with Deployed Addresses ❌
+
 **Status**: Placeholder addresses in README  
 **Required Actions**:
+
 - [ ] Update contract addresses table
 - [ ] Add verification links
 - [ ] Add transaction examples
 
 **Current**:
+
 ```markdown
 | **AION Vault** | `DEPLOYED_AFTER_DEPLOYMENT` | [Verify ↗](...) |
 ```
 
 **Should be**:
+
 ```markdown
 | **AION Vault** | `0x123...abc` | [Verify ↗](https://somnia-devnet.socialscan.io/address/0x123...abc) |
 ```
@@ -92,8 +105,10 @@
 ---
 
 ### 4. Frontend Development ❌
+
 **Status**: Basic structure exists, needs completion  
 **Required Actions**:
+
 - [ ] Complete integration with deployed contracts
 - [ ] Add real-time data fetching
 - [ ] Implement AI recommendation display
@@ -106,8 +121,10 @@
 ---
 
 ### 5. Demo Video ❌
+
 **Status**: Not created yet  
 **Required Actions**:
+
 - [ ] Script the demo (4-5 minutes)
 - [ ] Record walkthrough:
   - Problem statement
@@ -125,8 +142,10 @@
 ---
 
 ### 6. Pitch Deck ❌
+
 **Status**: Not created yet  
 **Required Slides** (8 total):
+
 - [ ] Slide 1: Vision (DeFi + AI)
 - [ ] Slide 2: Problem (Manual yield farming)
 - [ ] Slide 3: Solution (AION Vault + AI Agent)
@@ -141,8 +160,10 @@
 ---
 
 ### 7. Real Data Testing ❌
+
 **Status**: Contracts ready but not tested with real data  
 **Required Actions**:
+
 - [ ] Deploy test strategies (Venus, PancakeSwap)
 - [ ] Register strategies in SomniaAgent
 - [ ] Perform test deposits
@@ -156,8 +177,10 @@
 ---
 
 ### 8. Integration Testing ❌
+
 **Status**: Unit tests exist, need integration tests  
 **Required Actions**:
+
 - [ ] Test full user journey (deposit → analyze → rebalance → withdraw)
 - [ ] Test edge cases (low TVL, unhealthy strategies)
 - [ ] Test emergency functions (pause, circuit breaker)
@@ -171,6 +194,7 @@
 ## 🎯 Immediate Action Plan (Next Steps)
 
 ### Step 1: Deploy to Somnia (TODAY) 🔥
+
 ```bash
 cd contracts
 # Add your PRIVATE_KEY to .env
@@ -178,6 +202,7 @@ cd contracts
 ```
 
 **Expected Output**:
+
 ```
 AION Vault: 0x...
 Somnia Agent: 0x...
@@ -187,6 +212,7 @@ Somnia AI Mock: 0x...
 ---
 
 ### Step 2: Verify Contracts (TODAY) 🔥
+
 1. Go to: https://somnia-devnet.socialscan.io
 2. Search for each contract address
 3. Click "Verify & Publish"
@@ -195,12 +221,15 @@ Somnia AI Mock: 0x...
 ---
 
 ### Step 3: Update README (TODAY) 🔥
+
 Replace placeholder addresses with real ones
 
 ---
 
 ### Step 4: Create Demo Video (TOMORROW)
+
 **Script Outline**:
+
 ```
 0:00 - Introduction & Problem
 0:30 - Solution: AION Vault AI Agent
@@ -217,6 +246,7 @@ Replace placeholder addresses with real ones
 ---
 
 ### Step 5: Create Pitch Deck (TOMORROW)
+
 Use Canva or Google Slides template
 
 ---
@@ -232,6 +262,7 @@ Overall Progress: 55% ████████░░░░░░░░░░
 ```
 
 ### By Priority:
+
 - 🔴 HIGH Priority: 3 tasks (Deployment, Verification, Video)
 - 🟡 MEDIUM Priority: 4 tasks (Frontend, Deck, Testing, README update)
 - 🟢 LOW Priority: 1 task (Integration tests)
@@ -241,6 +272,7 @@ Overall Progress: 55% ████████░░░░░░░░░░
 ## 🏆 Hackathon Submission Requirements
 
 ### Required (Must Have) ✅
+
 - [x] Public GitHub repo
 - [x] Open-source license (MIT)
 - [x] Detailed README
@@ -250,6 +282,7 @@ Overall Progress: 55% ████████░░░░░░░░░░
 - [ ] Demo video (≤5 min)
 
 ### Optional (Nice to Have) ⚪
+
 - [ ] Pitch deck
 - [ ] Live frontend demo
 - [ ] Test coverage reports
@@ -260,14 +293,17 @@ Overall Progress: 55% ████████░░░░░░░░░░
 ## 💡 Quick Wins (Easy to Complete)
 
 1. **Get Faucet Tokens** (5 min)
+
    - Visit: https://faucet.somnia.network
    - Request STT tokens
 
 2. **Deploy Contracts** (10 min)
+
    - Run deployment script
    - Save addresses
 
 3. **Verify Contracts** (15 min per contract)
+
    - Use block explorer
    - Paste flattened code
 
@@ -282,12 +318,14 @@ Overall Progress: 55% ████████░░░░░░░░░░
 ## 🎬 Demo Video Checklist
 
 ### Pre-Production
+
 - [ ] Write script (5 min)
 - [ ] Prepare test wallet with funds
 - [ ] Deploy and verify contracts
 - [ ] Test all features work
 
 ### Recording
+
 - [ ] Screen recording software (Loom/OBS)
 - [ ] Clear audio (microphone test)
 - [ ] Show GitHub repo
@@ -297,6 +335,7 @@ Overall Progress: 55% ████████░░░░░░░░░░
 - [ ] Show results
 
 ### Post-Production
+
 - [ ] Edit for clarity
 - [ ] Add captions/subtitles
 - [ ] Add background music (optional)
@@ -309,6 +348,7 @@ Overall Progress: 55% ████████░░░░░░░░░░
 ## 📊 Success Metrics
 
 ### Technical Metrics
+
 - Smart contracts deployed: 3
 - Real data sources: 4 (Venus, Pancake, Aave, Beefy)
 - Lines of Solidity code: ~2,000
@@ -316,6 +356,7 @@ Overall Progress: 55% ████████░░░░░░░░░░
 - Test coverage: TBD
 
 ### Hackathon Metrics
+
 - GitHub stars: TBD
 - Demo video views: TBD
 - Judge feedback: TBD
@@ -357,10 +398,10 @@ Day 3:
 ---
 
 **Next Command to Run**:
+
 ```bash
 cd contracts
 ./deploy_to_somnia.sh
 ```
 
 **Ready to deploy? 🚀**
-

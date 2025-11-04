@@ -16,9 +16,6 @@ import "./AIONVault.sol";
 contract SomniaAgent is Ownable, ReentrancyGuard {
     // ========== State Variables ==========
     
-    /// @notice Reference to Somnia AI Engine
-    ISomniaAI public somniaAI;
-    
     /// @notice Reference to AION Vault
     AIONVault public vault;
     
@@ -62,7 +59,6 @@ contract SomniaAgent is Ownable, ReentrancyGuard {
     
     // ========== Events ==========
     
-    event SomniaAIUpdated(address indexed newAI);
     event StrategyRegistered(address indexed strategy);
     event StrategyRemoved(address indexed strategy);
     event AIRecommendationReceived(
@@ -103,15 +99,10 @@ contract SomniaAgent is Ownable, ReentrancyGuard {
     
     // ========== Constructor ==========
     
-    constructor(
-        address _vault,
-        address _somniaAI
-    ) Ownable(msg.sender) {
+    constructor(address _vault) Ownable(msg.sender) {
         require(_vault != address(0), "Invalid vault address");
-        require(_somniaAI != address(0), "Invalid Somnia AI address");
         
         vault = AIONVault(payable(_vault));
-        somniaAI = ISomniaAI(_somniaAI);
         lastRebalanceTime = block.timestamp;
     }
     
@@ -438,16 +429,6 @@ contract SomniaAgent is Ownable, ReentrancyGuard {
     // ========== Admin Functions ==========
     
     /**
-     * @notice Update Somnia AI address
-     * @param _somniaAI New Somnia AI address
-     */
-    function setSomniaAI(address _somniaAI) external onlyOwner {
-        require(_somniaAI != address(0), "Invalid Somnia AI address");
-        somniaAI = ISomniaAI(_somniaAI);
-        emit SomniaAIUpdated(_somniaAI);
-    }
-    
-    /**
      * @notice Update minimum confidence threshold
      * @param _threshold New threshold (0-100)
      */
@@ -521,7 +502,6 @@ contract SomniaAgent is Ownable, ReentrancyGuard {
         view
         returns (
             address vaultAddress,
-            address somniaAIAddress,
             uint256 confidenceThreshold,
             uint256 cooldown,
             bool autonomous,
@@ -530,7 +510,6 @@ contract SomniaAgent is Ownable, ReentrancyGuard {
     {
         return (
             address(vault),
-            address(somniaAI),
             minConfidenceThreshold,
             rebalanceCooldown,
             autonomousModeEnabled,
